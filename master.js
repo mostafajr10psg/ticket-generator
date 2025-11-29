@@ -138,7 +138,7 @@ document.forms[0].onsubmit = (e) => {
   const animationTicket = document.querySelector(".ticket-animation");
   animationTicket.classList.remove("hidden");
   setTimeout(() => animationTicket.classList.remove("opacity-0"), 150);
-  document.querySelector(".user-ticket .user-info > img").src = avatarEle.src;
+  document.querySelector(".user-ticket .user-info img").src = avatarEle.src;
 
   setTxtContentToEle(".ticket-ready .title h1 span", userNameEle.value);
   setTxtContentToEle(".ticket-ready .title .desc span", userMailEle.value);
