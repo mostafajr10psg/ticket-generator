@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ticket-generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/all.min.css" />
+    <link rel="stylesheet" href="CSS/main.css" />
+  </head>
+  <body>
+    <div class="bg-lines"></div>
+
+    <header class="text-center">
+      <img src="images/logo-full.svg" alt="" />
+    </header>
+    <main>
+      <section class="sign-in">
+        <div class="title text-center">
+          <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+          <p class="desc">Secure your spot at next year's biggest coding conference.</p>
+        </div>
+        <form>
+          <div class="upload">
+            <p>Upload Avatar</p>
+            <div class="upload-section text-center">
+              <input class="hidden" type="file" id="upload-av" accept="image/*" />
+              <label class="d-flex-center-x-y" for="upload-av">
+                <img class="upload-icon" src="images/icon-upload.svg" alt="" />
+                <img class="avatar hidden" alt="" />
+              </label>
+              <p class="drag-drop-msg">Drag and drop or click to upload</p>
+              <div class="control-avatar d-flex-center-x-y hidden">
+                <button type="button" class="remove">Remove Image</button>
+                <button type="button" class="change">Change Image</button>
+              </div>
+            </div>
+            <div class="upload-msg">
+              <span class="info-icon d-flex-center-x-y">i</span>
+              <p>Upload your photo (JPG or PNG, max size: 500KB).</p>
+            </div>
+          </div>
+          <div class="user-info">
+            <label>Full Name</label>
+            <input type="text" name="user-name" maxlength="20" />
+            <div class="invalid-field username hidden">
+              <span class="info-icon d-flex-center-x-y">i</span>
+              <p>Please enter your name</p>
+            </div>
+          </div>
+          <div class="user-info">
+            <label>Email Address</label>
+            <input type="email" name="user-email" placeholder="example@email.com" />
+            <div class="invalid-field email hidden">
+              <span class="info-icon d-flex-center-x-y">i</span>
+              <p>Please enter a valid email address</p>
+            </div>
+          </div>
+          <div class="user-info">
+            <label>GitHub Username</label>
+            <input type="text" name="user-github" placeholder="@yourusername" />
+            <div class="invalid-field github hidden">
+              <span class="info-icon d-flex-center-x-y">i</span>
+              <p>Please enter your github account</p>
+            </div>
+          </div>
+          <input type="submit" value="Generate My Ticket" />
+        </form>
+      </section>
+
+      <div class="ticket-animation hidden opacity-0">
+        <h2>Your ticket is generating</h2>
+        <div class="squares">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <section class="ticket-ready hidden opacity-0 transition trans-y-15">
+        <div class="title text-center">
+          <h1>Congrats, <span></span>! Your ticket is ready.</h1>
+          <p class="desc">
+            We've emailed your ticket to
+            <span>${userMailEle.value}</span> and will send updates in the run up to the event.
+          </p>
+        </div>
+        <div class="user-ticket">
+          <img src="images/pattern-ticket.svg" alt="" />
+          <div class="ticket-info">
+            <img src="images/logo-full.svg" alt="" />
+            <p class="ticket-date">Jan 31, 2025 / Austin, TX</p>
+          </div>
+          <div class="user-info">
+            <img src="" alt="" />
+            <div class="user-acc">
+              <h2></h2>
+              <div class="github-acc">
+                <img src="images/icon-github.svg" alt="" />
+                <p class="github-name"></p>
+              </div>
+            </div>
+          </div>
+          <span class="ticket-id"></span>
+        </div>
+      </section>
+    </main>
+    <script src="master.js"></script>
+  </body>
+</html>
